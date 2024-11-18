@@ -4,12 +4,14 @@
 
 namespace Gs_DotNet.Migrations
 {
-    public partial class UpdatedBooleanToString2 : Migration
+    /// <inheritdoc />
+    public partial class InitialCreate : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "GS_Eletrodomesticos",
+                name: "Eletrodomesticos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -24,11 +26,11 @@ namespace Gs_DotNet.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GS_Eletrodomesticos", x => x.Id);
+                    table.PrimaryKey("PK_Eletrodomesticos", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "GS_Cafeteiras",
+                name: "Cafeteiras",
                 columns: table => new
                 {
                     IdCafeteira = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -41,17 +43,17 @@ namespace Gs_DotNet.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GS_Cafeteiras", x => x.IdCafeteira);
+                    table.PrimaryKey("PK_Cafeteiras", x => x.IdCafeteira);
                     table.ForeignKey(
-                        name: "FK_GS_Cafeteiras_GS_Eletrodomesticos_GS_EletrodomesticoId",
+                        name: "FK_Cafeteiras_Eletrodomesticos_EletrodomesticoId",
                         column: x => x.EletrodomesticoId,
-                        principalTable: "GS_Eletrodomesticos",
+                        principalTable: "Eletrodomesticos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "GS_Geladeiras",
+                name: "Geladeiras",
                 columns: table => new
                 {
                     IdGeladeira = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -65,17 +67,17 @@ namespace Gs_DotNet.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GS_Geladeiras", x => x.IdGeladeira);
+                    table.PrimaryKey("PK_Geladeiras", x => x.IdGeladeira);
                     table.ForeignKey(
-                        name: "FK_GS_Geladeiras_GS_Eletrodomesticos_GS_EletrodomesticoId",
+                        name: "FK_Geladeiras_Eletrodomesticos_EletrodomesticoId",
                         column: x => x.EletrodomesticoId,
-                        principalTable: "GS_Eletrodomesticos",
+                        principalTable: "Eletrodomesticos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "GS_Lavadoras",
+                name: "Lavadoras",
                 columns: table => new
                 {
                     IdMaquina = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -89,17 +91,17 @@ namespace Gs_DotNet.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GS_Lavadoras", x => x.IdMaquina);
+                    table.PrimaryKey("PK_Lavadoras", x => x.IdMaquina);
                     table.ForeignKey(
-                        name: "FK_GS_Lavadoras_GS_Eletrodomesticos_GS_EletrodomesticoId",
+                        name: "FK_Lavadoras_Eletrodomesticos_EletrodomesticoId",
                         column: x => x.EletrodomesticoId,
-                        principalTable: "GS_Eletrodomesticos",
+                        principalTable: "Eletrodomesticos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "GS_Microondas",
+                name: "Microondas",
                 columns: table => new
                 {
                     IdMicroondas = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -113,17 +115,17 @@ namespace Gs_DotNet.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GS_Microondas", x => x.IdMicroondas);
+                    table.PrimaryKey("PK_Microondas", x => x.IdMicroondas);
                     table.ForeignKey(
-                        name: "FK_GS_Microondas_GS_Eletrodomesticos_GS_EletrodomesticoId",
+                        name: "FK_Microondas_Eletrodomesticos_EletrodomesticoId",
                         column: x => x.EletrodomesticoId,
-                        principalTable: "GS_Eletrodomesticos",
+                        principalTable: "Eletrodomesticos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "GS_Ventiladores",
+                name: "Ventiladores",
                 columns: table => new
                 {
                     IdVentilador = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -136,66 +138,66 @@ namespace Gs_DotNet.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_GS_Ventiladores", x => x.IdVentilador);
+                    table.PrimaryKey("PK_Ventiladores", x => x.IdVentilador);
                     table.ForeignKey(
-                        name: "FK_GS_Ventiladores_GS_Eletrodomesticos_GS_EletrodomesticoId",
+                        name: "FK_Ventiladores_Eletrodomesticos_EletrodomesticoId",
                         column: x => x.EletrodomesticoId,
-                        principalTable: "GS_Eletrodomesticos",
+                        principalTable: "Eletrodomesticos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            // Atualizando os índices para refletir o nome correto das tabelas
             migrationBuilder.CreateIndex(
-                name: "IX_GS_Cafeteiras_EletrodomesticoId",
-                table: "GS_Cafeteiras",
+                name: "IX_Cafeteiras_EletrodomesticoId",
+                table: "Cafeteiras",
                 column: "EletrodomesticoId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_GS_Geladeiras_EletrodomesticoId",
-                table: "GS_Geladeiras",
+                name: "IX_Geladeiras_EletrodomesticoId",
+                table: "Geladeiras",
                 column: "EletrodomesticoId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_GS_Lavadoras_EletrodomesticoId",
-                table: "GS_Lavadoras",
+                name: "IX_Lavadoras_EletrodomesticoId",
+                table: "Lavadoras",
                 column: "EletrodomesticoId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_GS_Microondas_EletrodomesticoId",
-                table: "GS_Microondas",
+                name: "IX_Microondas_EletrodomesticoId",
+                table: "Microondas",
                 column: "EletrodomesticoId",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_GS_Ventiladores_EletrodomesticoId",
-                table: "GS_Ventiladores",
+                name: "IX_Ventiladores_EletrodomesticoId",
+                table: "Ventiladores",
                 column: "EletrodomesticoId",
                 unique: true);
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "GS_Cafeteiras");
+                name: "Cafeteiras");
 
             migrationBuilder.DropTable(
-                name: "GS_Geladeiras");
+                name: "Geladeiras");
 
             migrationBuilder.DropTable(
-                name: "GS_Lavadoras");
+                name: "Lavadoras");
 
             migrationBuilder.DropTable(
-                name: "GS_Microondas");
+                name: "Microondas");
 
             migrationBuilder.DropTable(
-                name: "GS_Ventiladores");
+                name: "Ventiladores");
 
             migrationBuilder.DropTable(
-                name: "GS_Eletrodomesticos");
+                name: "Eletrodomesticos");
         }
     }
 }

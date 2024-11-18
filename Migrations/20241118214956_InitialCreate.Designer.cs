@@ -11,8 +11,8 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace Gs_DotNet.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241113190110_UpdatedBooleanToString2")]
-    partial class UpdatedBooleanToString2
+    [Migration("20241118214956_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,10 +54,9 @@ namespace Gs_DotNet.Migrations
                     b.HasKey("IdCafeteira");
 
                     b.HasIndex("EletrodomesticoId")
-                        .IsUnique()
-                        .HasDatabaseName("IX_GS_Cafeteiras_EletrodomesticoId");
+                        .IsUnique();
 
-                    b.ToTable("GS_Cafeteiras");
+                    b.ToTable("Cafeteiras");
                 });
 
             modelBuilder.Entity("Gs_DotNet.Domain.Entities.Eletrodomestico", b =>
@@ -102,7 +101,7 @@ namespace Gs_DotNet.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("GS_Eletrodomesticos");
+                    b.ToTable("Eletrodomesticos");
                 });
 
             modelBuilder.Entity("Gs_DotNet.Domain.Entities.Geladeira", b =>
@@ -137,10 +136,9 @@ namespace Gs_DotNet.Migrations
                     b.HasKey("IdGeladeira");
 
                     b.HasIndex("EletrodomesticoId")
-                        .IsUnique()
-                        .HasDatabaseName("IX_GS_Geladeiras_EletrodomesticoId");
+                        .IsUnique();
 
-                    b.ToTable("GS_Geladeiras");
+                    b.ToTable("Geladeiras");
                 });
 
             modelBuilder.Entity("Gs_DotNet.Domain.Entities.MaquinaLavar", b =>
@@ -175,10 +173,9 @@ namespace Gs_DotNet.Migrations
                     b.HasKey("IdMaquina");
 
                     b.HasIndex("EletrodomesticoId")
-                        .IsUnique()
-                        .HasDatabaseName("IX_GS_Lavadoras_EletrodomesticoId");
+                        .IsUnique();
 
-                    b.ToTable("GS_Lavadoras");
+                    b.ToTable("Lavadoras");
                 });
 
             modelBuilder.Entity("Gs_DotNet.Domain.Entities.Microondas", b =>
@@ -211,10 +208,9 @@ namespace Gs_DotNet.Migrations
                     b.HasKey("IdMicroondas");
 
                     b.HasIndex("EletrodomesticoId")
-                        .IsUnique()
-                        .HasDatabaseName("IX_GS_Microondas_EletrodomesticoId");
+                        .IsUnique();
 
-                    b.ToTable("GS_Microondas");
+                    b.ToTable("Microondas");
                 });
 
             modelBuilder.Entity("Gs_DotNet.Domain.Entities.Ventilador", b =>
@@ -246,10 +242,9 @@ namespace Gs_DotNet.Migrations
                     b.HasKey("IdVentilador");
 
                     b.HasIndex("EletrodomesticoId")
-                        .IsUnique()
-                        .HasDatabaseName("IX_GS_Ventiladores_EletrodomesticoId");
+                        .IsUnique();
 
-                    b.ToTable("GS_Ventiladores");
+                    b.ToTable("Ventiladores");
                 });
 
             modelBuilder.Entity("Gs_DotNet.Domain.Entities.Cafeteira", b =>
