@@ -4,7 +4,7 @@ Este é um projeto em .NET para a gestão de dispositivos eletrônicos, incluind
 
 ## Sumário
 
-- [Instalação](#Instalação)
+- [Instalação](#instalação)
 - [Configuração](#configuração)
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Funcionalidades](#funcionalidades)
@@ -50,7 +50,6 @@ dotnet run
 ├── Domain                 # Entidades de domínio
 ├── Dtos                   # Objetos de Transferência de Dados (DTOs)
 ├── Migrations             # Arquivos de migração para o Entity Framework
-├── Repositories           # Repositórios para acesso ao banco de dados
 └── Program.cs             # Arquivo principal para configuração do pipeline da aplicação
 ```
 ## Funcionalidades
@@ -127,6 +126,11 @@ Contribuições são bem-vindas! Para contribuir:
 3. Commit suas mudanças `(git commit -m 'Adiciona nova funcionalidade')`.
 4. Envie para a branch `(git push origin feature/sua-funcionalidade)`.
 5. Abra um Pull Request.
+
+## Integrantes
+### RM552752 Arthur Fenili
+### RM553185 Enzo Antunes Oliveira
+### RM553813 Vinicio Raphael Santana
 
 
 
