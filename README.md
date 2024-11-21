@@ -11,6 +11,7 @@ Este é um projeto em .NET para a gestão de dispositivos eletrônicos, incluind
 - [APIs Disponíveis](#apis-disponíveis)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Contribuição](#contribuição)
+- [Integrantes](#integrantes)
 
 ## Instalação
 
